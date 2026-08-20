@@ -13,7 +13,10 @@ const PORT = process.env.PORT || 5001
 
 //middlewares
 app.use(cors({
-    origin: "https://photo-gallery-app-client-z2ty.vercel.app"
+    origin: [
+        "http://localhost:5173/",
+        "https://photo-gallery-app-frontend-phi.vercel.app"
+    ]
 }))
 app.use(express.json())
 
@@ -22,13 +25,13 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 
 app.use("/api/images", authToken, imageRoutes);
 app.use("/api/users", userRouter);
-app.use("/api/auth", authRouter);   
+app.use("/api/auth", authRouter);
 
 
 // error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack)
-    res.status(500).json({ 
+    res.status(500).json({
         message: "Something went wrong",
         details: err.message
     })
