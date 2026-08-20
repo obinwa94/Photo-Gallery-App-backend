@@ -39,7 +39,11 @@ const imageModel = new mongoose.Schema({
     url: {
         type: String,
         required: true
-    }
+    },
+    // userID: {
+    //     type: String,
+    //     required: true,
+    // }
 }, { timestamps: true, versionKey: false })
 
 module.exports = mongoose.model("Images", imageModel)

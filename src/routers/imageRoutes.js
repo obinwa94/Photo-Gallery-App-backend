@@ -1,6 +1,9 @@
 const router = require("express").Router()
 const { getAllImages, uploadSingleImage, uploadMultipleImages, getImageById, deleteImageById } = require("./imageController")
 const upload = require("../middleware/upload")
+const tokenAuth = require("../Auth/tokenAuth")
+
+router.use(tokenAuth)
 
 // upload single image
 router.post("/upload/single", upload.single("image"), uploadSingleImage)

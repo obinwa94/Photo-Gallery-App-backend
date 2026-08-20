@@ -50,6 +50,7 @@ async function uploadSingleImage(req, res) {
                 width: metadata.width,
                 height: metadata.height
             },
+            // userID: req.user.id,
             url: `/uploads/resize/${resizedFilename}`
 
         })
@@ -70,7 +71,8 @@ async function uploadSingleImage(req, res) {
                 resizedSize: resizedImage.size,
                 path: newImage.path,
                 mimeType: newImage.mimeType,
-                url: newImage.url
+                url: newImage.url,
+                // userID
             }
         })
 
@@ -120,6 +122,7 @@ async function uploadMultipleImages(req, res) {
                     width: metadata.width,
                     height: metadata.height
                 },
+                // userID: req.user.id,
                 url: `/uploads/resize/${resizedFilename}`
 
             })
@@ -140,6 +143,7 @@ async function uploadMultipleImages(req, res) {
                 size: newImage.size,
                 resizedSize: newImage.resizedSize,
                 dimensions: newImage.dimension,
+                // userID,
                 url: newImage.url,
             })
 
