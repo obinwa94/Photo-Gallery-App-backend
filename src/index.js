@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5001
 
 //middlewares
 app.use(cors({
-    origin: "https://photo-gallery-app-frontend-phi.vercel.app/"
+    origin: "https://photo-gallery-app-client-z2ty.vercel.app/"
 }))
 app.use(express.json())
 
