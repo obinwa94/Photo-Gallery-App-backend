@@ -13,11 +13,11 @@ const PORT = process.env.PORT || 5001
 
 //middlewares
 app.use(cors({
-    origin: [
-        "http://localhost:5173",
-        "https://photo-gallery-app-client-7eu4-three.vercel.app"
-    ]
+    origin: "https://photo-gallery-app-client-7eu4-three.vercel.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
 app.use(express.json())
 
 //serve static files from the uploads directory
