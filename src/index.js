@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5001
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://photo-gallery-app-client-ywjt.vercel.app"
+        "https://photo-gallery-app-client-7eu4-three.vercel.app"
     ]
 }));
 app.use(express.json())
