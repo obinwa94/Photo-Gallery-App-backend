@@ -13,6 +13,11 @@ const PORT = process.env.PORT || 5001
 
 //middlewares
 app.use(cors({
+    origin: "https://photo-gallery-app-client-7eu4-three.vercel.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+app.options("*", cors({
     origin: "https://photo-gallery-app-client-7eu4-three.vercel.app"
 }));
 
